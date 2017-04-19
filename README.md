@@ -12,13 +12,11 @@ buildscript {
     
     dependencies {
         classpath 'me.tatarka:gradle-retrolambda:3.2.4'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 ```
 并在Module下的`build.gradle`添加以下内容:
 ``` gradle
-apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 
 android {
@@ -29,7 +27,7 @@ android {
 }
 
 dependencies {
-    apt 'com.google.dagger:dagger-compiler:2.4'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
     compile 'com.google.dagger:dagger:2.4'
     provided 'org.glassfish:javax.annotation:10.0-b28'
 }
